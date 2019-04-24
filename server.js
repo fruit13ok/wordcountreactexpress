@@ -63,6 +63,6 @@ app.get('/api/wordcount', (req, res) => {
   // res.json(wordCountArr);
 });
 
-const port = 5000;
+const port = process.env.PORT || 5000;
 
 app.listen(port, () => `Server running on port ${port}`);

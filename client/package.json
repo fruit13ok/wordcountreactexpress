@@ -8,6 +8,10 @@
     "react-dom": "^16.8.6",
     "react-scripts": "3.0.0"
   },
+  "engines": {
+    "node": "10.7.0",
+    "npm": "6.2.0"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
