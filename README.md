@@ -6,7 +6,9 @@
 ### Outline
 
 ### Reseach
-1. https://www.youtube.com/watch?v=v0t42xBIYIs
+1. This project contain lots of research. This is the first time learning web scraping. Also the first time try to setup react and node into a single repo.
+https://cheerio.js.org/
+https://www.youtube.com/watch?v=v0t42xBIYIs
 
 
 ### 4-23-2019
@@ -67,4 +69,24 @@ app.listen(port, () => `Server running on port ${port}`);
 11. Create react components `SearchBar` for enter URL and `WordList` display list of words and their count
 
 12. After submit URL input `SearchBar` lifting state up back to `App`, axios call to backend express route `/api/wordcount` to get the placeholder data, pass `response data` to `WordList` to loop through object key / value pairs, display as `<li>`.
+
+13. Web scraping
+   1. Install `request` and `cheerio`<br>
+   `npm i request cheerio`
+   2. Back to `App.js` and replace the placeholder with a request to a url, and cheerio scraping. cheerio will clone the html / DOM, traverse like jQuery. So I assume the targeted website has to have jQuery in order to scrape it.
+   3. Extract all the text, parse them, store them in a map, each word as key, its count as value.
+
+14. Setup `concurrently`
+   1. Stop both client and server.
+   2. Go to server's `package.json`, edit script to add install client script, add run client, use concurrently create a script to run server script first then run client script<br>
+   ```
+    "scripts": {
+        "start": "node server.js",
+        "server": "nodemon server.js",
+        "client": "npm start --prefix client",
+        "dev": "concurrently \"npm run server\" \"npm run client\""
+    },
+   ```
+   3. Use new concurrently run script<br>
+   `npm run dev`
 
