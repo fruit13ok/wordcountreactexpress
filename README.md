@@ -1,6 +1,7 @@
 # wordcountreactexpress
 ## This is a take home project given by interviewer, user React, Node, Express, and cheerio to build a simple word count app to count words on given website by scraping in 1 week.
 
+- [Github link](https://github.com/fruit13ok/wordcountreactexpress).
 
 
 ### Outline
@@ -90,3 +91,11 @@ app.listen(port, () => `Server running on port ${port}`);
    3. Use new concurrently run script<br>
    `npm run dev`
 
+"scripts": {
+    "client-install": "npm install --prefix client",
+    "start": "node server.js",
+    "server": "nodemon server.js",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "heroku-postbuild": "cd client && npm install && npm run build"
+  },
