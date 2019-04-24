@@ -1,1 +1,1 @@
-web: node server.js | cd client
+web: node server.js

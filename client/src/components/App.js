@@ -16,7 +16,7 @@ class App extends React.Component {
     onSearchSubmit = async (url) => {
         // console.log('url: ',url);
         this.setState({url: url});
-        const response = await axios.get('/api/wordcount',{
+        const response = await axios.get('https://ancient-brook-39367.herokuapp.com/api/wordcount',{
             params: {
                 query: url
             },
