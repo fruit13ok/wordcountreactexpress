@@ -1,6 +1,6 @@
 import React from 'react';
 class SearchBar extends React.Component{
-    state = { url: ''};
+    state = { url: 'https://www.google.com'};
     onFormSubmit = (event) =>{
         event.preventDefault();
         this.props.onSubmit(this.state.url);

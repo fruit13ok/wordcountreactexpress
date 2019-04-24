@@ -16,13 +16,14 @@ class App extends React.Component {
     onSearchSubmit = async (url) => {
         // console.log('url: ',url);
         this.setState({url: url});
-        const response = await axios.get('https://ancient-brook-39367.herokuapp.com/api/wordcount',{
+        // const response = await axios.get('https://ancient-brook-39367.herokuapp.com/api/wordcount',{
+        const response = await axios.get('/api/wordcount',{
             params: {
                 query: url
             },
         });
         this.setState({results: response.data});
-        // console.log('results: ',this.state.results);
+        console.log('results: ',this.state.results);
     }
     render() {
         return (
