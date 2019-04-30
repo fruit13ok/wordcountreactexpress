@@ -16,6 +16,7 @@ class SearchBar extends React.Component{
                         value={this.state.url}
                         onChange={(event) => this.setState({url: event.target.value})}
                     />
+                    <input type="submit" value="Submit" />
                 </div>
                 </form>
             </div>

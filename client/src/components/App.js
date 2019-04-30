@@ -27,11 +27,11 @@ class App extends React.Component {
     }
     render() {
         return (
-            <div>
-                <h2>word count</h2>
-                <p>Please enter full URL such as https://www.google.com</p>
+            <div className="app-center">
+                <h2>Word Count</h2>
+                <p>Please enter full URL such as https://www.google.com then hit enter</p>
                 <SearchBar onSubmit={this.onSearchSubmit} />
-                <p>Word count: {this.state.results[0]}</p>
+                <p>Totaol # of Word: {this.state.results[0]}</p>
                 <WordList wordStatus={this.state.results[1]}/>
             </div>
         );

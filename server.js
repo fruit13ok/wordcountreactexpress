@@ -10,19 +10,28 @@ app.get('/api/wordcount', (req, res) => {
     var wordCountArr = [];
     var wordCount=0;
     var wordStatus = {};
-    // request('https://fruit13ok.github.io/finalProject.html', (error, response, html) => {
-    // request('https://fruit13ok.github.io/try.html', (error, response, html) => {
-    // request('https://www.google.com', (error, response, html) => {
+    // https://fruit13ok.github.io/finalProject.html
+    // https://fruit13ok.github.io/try.html
+    // https://www.google.com'
+    // https://symphysismarketing.com/
     request(url, (error, response, html) => {
         if(!error && response.statusCode == 200){
             console.log('success');
             var $ = cheerio.load(html);
+            // texts is redundant because text will get all text both itself and children
             const texts = [];
-            $('body > *').each(function(i, elem) {
+            $('body').each(function(i, elem) {
+                // console.log($(elem).text());
                 var eachStr = $(elem).text().trim().replace(/[()]|\s\s+/g, ' ');
+                // console.log(eachStr);
                 var eachArr = eachStr.split(' ').filter(function (el) {
-                    return el != '';
+                    if(el.length === 1 && /^[a-zA-Z0-9]$/.test(el)){
+                        return el;
+                    }else if(el.length > 1 && [''].indexOf(el) == -1 && el.length < 46 ){
+                        return el;
+                    }
                 });
+                // console.log(eachArr);
                 texts.push(...eachArr);
             });
             wordCount+=texts.length;
@@ -38,7 +47,7 @@ app.get('/api/wordcount', (req, res) => {
             // console.log('each word count: ',wordStatus);
             wordCountArr.push(wordCount);
             wordCountArr.push(wordStatus);
-            console.log(wordCountArr);
+            // console.log(wordCountArr);
             res.json(wordCountArr);
         }else{
           res.json(['ERROR', {'Please check URL': 'try again'}]);

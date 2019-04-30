@@ -2,15 +2,20 @@
 ## This is a take home project given by interviewer, user React, Node, Express, and cheerio to build a simple word count app to count words on given website by scraping in 1 week.
 
 - [Github link](https://github.com/fruit13ok/wordcountreactexpress).
-
+- [Heroku link](https://wordcountreactexpress.herokuapp.com/).
 
 ### Outline
 
 ### Reseach
 1. This project contain lots of research. This is the first time learning web scraping. Also the first time try to setup react and node into a single repo.
 https://cheerio.js.org/
+http://zetcode.com/javascript/cheerio/
 https://www.youtube.com/watch?v=v0t42xBIYIs
-
+https://daveceddia.com/deploy-react-express-app-heroku/
+https://coursework.vschool.io/deploying-mern-with-heroku/
+https://medium.freecodecamp.org/how-to-deploy-a-react-app-with-an-express-server-on-heroku-32244fe5a250
+https://stackoverflow.com/questions/50629652/strange-create-react-app-heroku-error-cannot-get
+https://www.youtube.com/watch?v=P86N9FqNqso
 
 ### 4-23-2019
 1. Setup node / express:
